@@ -23,11 +23,11 @@ An event-driven serverless pipeline on AWS that automatically processes bill rec
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    AWS Event-Driven Pipeline                     │
-│                                                                  │
+│                    AWS Event-Driven Pipeline                    │
+│                                                                 │
 │  ┌──────────────┐    Event      ┌─────────────┐                 │
-│  │   Producer   │  Notification │             │                  │
-│  │  (producer   │──────────────▶│  S3 Bucket  │                 │
+│  │   Producer   │  Notification │             │                 │
+│  │  (producer   │──────────────▶│  S3 Bucket │                  |
 │  │    .py)      │   PUT Object  │  bills/     │                 │
 │  └──────────────┘               │  {uuid}.json│                 │
 │                                 └──────┬──────┘                 │
@@ -50,11 +50,11 @@ An event-driven serverless pipeline on AWS that automatically processes bill rec
 │                         ┌──────────────┼──────────────┐         │
 │                         │              │              │         │
 │                         ▼              ▼              ▼         │
-│                   ┌──────────┐  ┌──────────┐  ┌──────────┐     │
-│                   │ DynamoDB │  │    S3    │  │CloudWatch│     │
-│                   │  bills   │  │(read file│  │  Logs    │     │
-│                   │  table   │  │ content) │  │          │     │
-│                   └──────────┘  └──────────┘  └──────────┘     │
+│                   ┌──────────┐  ┌──────────┐  ┌──────────┐      │
+│                   │ DynamoDB │  │    S3    │  │CloudWatch│      │
+│                   │  bills   │  │(read file│  │  Logs    │      │
+│                   │  table   │  │ content) │  │          │      │
+│                   └──────────┘  └──────────┘  └──────────┘      │
 └─────────────────────────────────────────────────────────────────┘
 
 Flow:
